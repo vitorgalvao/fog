@@ -1,0 +1,39 @@
+{
+  "name": "fog",
+  "productName": "Fog",
+  "bundleId": "com.vitorgalvao.fog",
+  "version": "1.0.0",
+  "description": "An electron app for overcast.fm",
+  "main": "main.js",
+  "scripts": {
+    "get-electron-version": "grep 'electron-prebuilt' package.json | perl -pe 's/.*(\\d+\\.\\d+\\.\\d+).*/\\1/'",
+    "start": "electron main.js",
+    "build": "npm run build-osx",
+    "build-osx": "electron_version=$(npm run get-electron-version | tail -1) && electron-packager . $npm_package_productName --overwrite --prune --platform=darwin --arch=x64 --version=${electron_version} --app-bundle-id=$npm_package_bundleId --app-version=$npm_package_version --icon=../icon/icon.icns"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitorgalvao/fog.git"
+  },
+  "keywords": [
+    "electron",
+    "overcast",
+    "overcast.fm",
+    "podcasts"
+  ],
+  "author": "Vítor Galvão",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/vitorgalvao/fog/issues"
+  },
+  "homepage": "https://github.com/vitorgalvao/fog",
+  "devDependencies": {
+    "electron-packager": "^5.1.1",
+    "electron-prebuilt": "^0.35.4"
+  },
+  "dependencies": {
+    "electron-window-state": "^1.1.0",
+    "mousetrap": "^1.5.3",
+    "sweetalert": "^1.1.3"
+  }
+}

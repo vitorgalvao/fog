@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fog</title>
+    <style>
+      body {
+        margin: 0;
+        margin-top: 36px; /* title bar */
+      }
+
+      #overcast_webview {
+        display: block;
+        width: 100vw;
+        height: calc(100vh - 36px);
+      }
+    </style>
+  </head>
+  <body>
+    <webview id='overcast_webview' src='https://overcast.fm/podcasts/' preload='webview-script.js' disablewebsecurity></webview>
+
+    <script>
+      'use strict';
+
+      const ipcRenderer = require('electron').ipcRenderer;
+      const webview = document.getElementById('overcast_webview');
+      let first_run = true;
+
+      // Media keys shortcuts
+      ipcRenderer.on('media_keys', function(event, arg) {
+        webview.executeJavaScript('document.getElementById("' + arg + '").click();');
+      });
+
+      // Webview links that try to open in new window will open in default browser
+      webview.addEventListener('new-window', function(event) {
+        require('electron').shell.openExternal(event.url);
+      });
+
+      webview.addEventListener('dom-ready', function() {
+        // Inject sweetalert CSS into webview
+        const fs = require('fs');
+        const sweetalert_css = fs.readFileSync(__dirname + '/sweetalert.css', 'utf8');
+        this.insertCSS(sweetalert_css);
+
+        // Focus on webview, so we can start using keyboard shortcuts
+        if (first_run) {
+          webview.focus();
+          first_run = false;
+        }
+      });
+    </script>
+  </body>
+</html>
