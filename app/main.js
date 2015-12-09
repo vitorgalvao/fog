@@ -10,8 +10,17 @@ const windowStateKeeper = require('electron-window-state');
 
 let mainWindow;
 
+function focus_webview() {
+  mainWindow.webContents.executeJavaScript('document.getElementById("overcast_webview").focus();');
+}
+
 app.on('will-quit', function() {
   globalShortcut.unregisterAll();
+});
+
+// Focus on webview when focusing on window, so we can use keyboard shortcuts
+app.on('browser-window-focus', function() {
+  focus_webview();
 });
 
 app.on('ready', function() {
@@ -37,8 +46,9 @@ app.on('ready', function() {
   if (mainWindowState.isMaximized) { mainWindow.maximize(); }
   mainWindow.on('close', function() { mainWindowState.saveState(mainWindow) });
 
-  // Load the index.html of the app.
+  // Load the index.html of the app and focus on webview
   mainWindow.loadURL('file://' + __dirname + '/index.html')
+  focus_webview();
 
   // Media keys shortcuts
   globalShortcut.register('MediaPreviousTrack', function() { mainWindow.webContents.send('media_keys', 'seekbackbutton') });
