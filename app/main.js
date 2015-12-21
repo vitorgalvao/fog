@@ -42,9 +42,8 @@ app.on('ready', function() {
     title: 'Fog'
   });
 
-  // Check for window maximization and save state on close
-  if (mainWindowState.isMaximized) { mainWindow.maximize(); }
-  mainWindow.on('close', function() { mainWindowState.saveState(mainWindow) });
+  // Add listeners to check for window maximization and save state
+  mainWindowState.manage(mainWindow);
 
   // Load the index.html of the app and focus on webview
   mainWindow.loadURL('file://' + __dirname + '/index.html')
