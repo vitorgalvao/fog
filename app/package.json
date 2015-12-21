@@ -29,10 +29,10 @@
   "homepage": "https://github.com/vitorgalvao/fog",
   "devDependencies": {
     "electron-packager": "^5.1.1",
-    "electron-prebuilt": "^0.35.4"
+    "electron-prebuilt": "^0.36.1"
   },
   "dependencies": {
-    "electron-window-state": "^1.1.0",
+    "electron-window-state": "^2.0.0",
     "mousetrap": "^1.5.3",
     "sweetalert": "^1.1.3"
   }
