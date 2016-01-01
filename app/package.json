@@ -2,7 +2,7 @@
   "name": "fog",
   "productName": "Fog",
   "bundleId": "com.vitorgalvao.fog",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "An electron app for overcast.fm",
   "main": "main.js",
   "scripts": {
