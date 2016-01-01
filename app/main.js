@@ -81,7 +81,7 @@ app.on('ready', function() {
     }, {
       label: 'View',
       submenu: [
-        { label: 'Reload', accelerator: 'Command+R', click: function(item,focusedWindow) {if (focusedWindow) focusedWindow.reload();} }
+        { label: 'Reload', accelerator: 'Command+R', click: function(item,focusedWindow) {if (focusedWindow) focusedWindow.webContents.executeJavaScript('document.getElementById("overcast_webview").reload()');} }
       ]
     }, {
       label: 'Window',
