@@ -4,6 +4,10 @@ require('mousetrap');
 require('sweetalert');
 const clipboard = require('electron').clipboard;
 
+function return_home() {
+  window.location.href = 'https://overcast.fm/podcasts/';
+}
+
 // Which page type we are on
 function page_type() {
   if (/^\/podcasts/.test(window.location.pathname)) { return 'home' }
@@ -54,7 +58,7 @@ function navigate_cells(direction) {
 
 // Non-global shortcuts
 Mousetrap.bind('backspace', function() {
-  window.location.href = 'https://overcast.fm/podcasts/';
+  return_home();
 });
 
 Mousetrap.bind('command+backspace', function() {
@@ -117,5 +121,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     share.addEventListener('click', function() { copy_link(event, share) });
     share_with_timestamp.addEventListener('click', function() { copy_link(event, share_with_timestamp) });
+
+    // return home after playing episode
+    document.getElementById('audioplayer').addEventListener('ended', function() {
+      return_home();
+    });
   }
 });
