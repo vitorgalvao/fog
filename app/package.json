@@ -2,7 +2,7 @@
   "name": "fog",
   "productName": "Fog",
   "bundleId": "com.vitorgalvao.fog",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "An electron app for overcast.fm",
   "main": "main.js",
   "scripts": {
@@ -31,7 +31,7 @@
   "homepage": "https://github.com/vitorgalvao/fog",
   "devDependencies": {
     "electron-packager": "^5.2.1",
-    "electron-prebuilt": "^0.36.7"
+    "electron-prebuilt": "^0.36.10"
   },
   "dependencies": {
     "electron-window-state": "^2.0.0",
