@@ -14,6 +14,8 @@
 
 > “Share link” and “Share link with timestamp” copy link directly to the clipboard.
 
+> Automatically goes back to home when episode ends.
+
 <img src='http://i.imgur.com/6robqC6.png' width='48%' alt='Overcast screenshot'><img src='http://i.imgur.com/kQDjbcj.png' width='48%' alt='Overcast screenshot'>
 
 ## Install
