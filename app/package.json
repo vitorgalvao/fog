@@ -31,7 +31,7 @@
   "homepage": "https://github.com/vitorgalvao/fog",
   "devDependencies": {
     "electron-packager": "^5.2.1",
-    "electron-prebuilt": "^0.36.10"
+    "electron-prebuilt": "^0.37.2"
   },
   "dependencies": {
     "electron-window-state": "^2.0.0",
