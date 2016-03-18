@@ -14,10 +14,6 @@ function focus_webview() {
   mainWindow.webContents.executeJavaScript('document.getElementById("overcast_webview").focus();');
 }
 
-app.on('will-quit', function() {
-  globalShortcut.unregisterAll();
-});
-
 // Focus on webview when focusing on window, so we can use keyboard shortcuts
 app.on('browser-window-focus', function() {
   focus_webview();
