@@ -104,6 +104,7 @@ app.on('ready', function() {
     if (!mainWindow.forceClose) { // Unless we really told the app to quit
       event.preventDefault();
       mainWindow.hide();
+      app.focus();
     }
   });
 
