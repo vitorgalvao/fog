@@ -86,7 +86,8 @@ app.on('ready', function() {
     }, {
       label: 'Window',
       submenu: [
-        { label: 'Minimize', accelerator: 'Command+M', role: 'minimize' }
+        { label: 'Minimize', accelerator: 'Command+M', role: 'minimize' },
+        { label: 'Close', accelerator: 'Command+W', role: 'hide' }
       ]
     }, {
       label: 'Help',
