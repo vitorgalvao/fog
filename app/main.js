@@ -98,4 +98,20 @@ app.on('ready', function() {
     focus_webview();
   });
 
+  // Prevent app from exiting (hide it instead) when window is closed (i.e. when we press the red close button)
+  mainWindow.on('close', function(event) {
+    if (!mainWindow.forceClose) { // Unless we really told the app to quit
+      event.preventDefault();
+      mainWindow.hide();
+    }
+  });
+
+  app.on('before-quit', function() {
+    globalShortcut.unregisterAll();
+    mainWindow.forceClose = true;
+  });
+
+  app.on('activate', function() {
+    mainWindow.show();
+  });
 });
