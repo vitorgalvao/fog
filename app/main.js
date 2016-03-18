@@ -14,11 +14,6 @@ function focus_webview() {
   mainWindow.webContents.executeJavaScript('document.getElementById("overcast_webview").focus();');
 }
 
-// Focus on webview when focusing on window, so we can use keyboard shortcuts
-app.on('browser-window-focus', function() {
-  focus_webview();
-});
-
 app.on('ready', function() {
   // Initial window state
   let mainWindowState = windowStateKeeper({
@@ -97,4 +92,10 @@ app.on('ready', function() {
   ];
 
   Menu.setApplicationMenu(Menu.buildFromTemplate(template));
+
+  // Focus on webview when focusing on window, so we can use keyboard shortcuts
+  app.on('browser-window-focus', function() {
+    focus_webview();
+  });
+
 });
