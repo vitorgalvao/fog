@@ -109,8 +109,13 @@ app.on('ready', function() {
   });
 
   app.on('before-quit', function() {
+    setTimeout(function() { // Give enough time for the sync attempt to go through
+      mainWindow.forceClose = true;
+      app.quit();
+    }, 1500);
+
     globalShortcut.unregisterAll();
-    mainWindow.forceClose = true;
+    mainWindow.webContents.send('sync_podcast'); // Try to force a sync before closing
   });
 
   app.on('activate', function() {

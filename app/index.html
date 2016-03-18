@@ -38,6 +38,11 @@
         const sweetalert_css = fs.readFileSync(__dirname + '/sweetalert.css', 'utf8');
         this.insertCSS(sweetalert_css);
       });
+
+      // Try to force a sync before closing
+      ipcRenderer.on('sync_podcast', function() {
+        webview.executeJavaScript('player=document.getElementById("audioplayer");if(player){player.pause();player.forceServerSync();}');
+      });
     </script>
   </body>
 </html>
