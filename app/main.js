@@ -42,7 +42,7 @@ app.on('ready', function() {
 
   // Media keys shortcuts
   globalShortcut.register('MediaPreviousTrack', function() { mainWindow.webContents.send('media_keys', 'seekbackbutton') });
-  globalShortcut.register('MediaNextTrack', function() { mainWindow.webContents.send('media_keys', 'seekforwardbutton') });
+  globalShortcut.register('MediaNextTrack', function() { mainWindow.webContents.send('media_keys', 'seekforwardbutton'); });
   globalShortcut.register('MediaPlayPause', function() { mainWindow.webContents.send('media_keys', 'playpausebutton'); });
 
   // Main app menu
