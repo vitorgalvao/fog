@@ -16,7 +16,7 @@ function focus_webview() {
 
 app.on('ready', function() {
   // Initial window state
-  let mainWindowState = windowStateKeeper({
+  const mainWindowState = windowStateKeeper({
     defaultWidth: 352,
     defaultHeight: 556
   });
@@ -46,8 +46,8 @@ app.on('ready', function() {
   globalShortcut.register('MediaPlayPause', function() { mainWindow.webContents.send('media_keys', 'playpausebutton'); });
 
   // Main app menu
-  let name = electron.app.getName();
-  let template = [
+  const name = electron.app.getName();
+  const template = [
     {
       label: 'Application',
       submenu: [
