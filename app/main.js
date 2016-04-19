@@ -101,21 +101,18 @@ app.on('ready', function() {
 
   // Prevent app from exiting (hide it instead) when window is closed (i.e. when we press the red close button)
   mainWindow.on('close', function(event) {
-    if (!mainWindow.forceClose) { // Unless we really told the app to quit
-      event.preventDefault();
-      mainWindow.hide();
-      app.focus();
-    }
+    event.preventDefault();
+    mainWindow.hide();
+    app.focus();
   });
 
   app.on('before-quit', function() {
-    setTimeout(function() { // Give enough time for the sync attempt to go through
-      mainWindow.forceClose = true;
-      app.quit();
-    }, 1500);
-
     globalShortcut.unregisterAll();
     mainWindow.webContents.send('sync_podcast'); // Try to force a sync before closing
+
+    setTimeout(function() { // Give enough time for the sync attempt to go through
+      app.exit(0);
+    }, 1500);
   });
 
   app.on('activate', function() {
