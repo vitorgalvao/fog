@@ -32,9 +32,9 @@ function blur_cell(cell) {
 }
 
 function navigate_cells(direction) {
-  let current_cell = document.activeElement;
-  let down_cell = current_cell.nextElementSibling;
-  let up_cell = current_cell.previousElementSibling;
+  const current_cell = document.activeElement;
+  const down_cell = current_cell.nextElementSibling;
+  const up_cell = current_cell.previousElementSibling;
   let next_cell;
 
   if (is_episode_cell(current_cell)) { // Pick next cell if already on one
