@@ -1,5 +1,3 @@
-'use strict';
-
 require('mousetrap');
 require('sweetalert');
 const clipboard = require('electron').clipboard;
