@@ -1,7 +1,7 @@
 const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
-const Menu = require('menu');
+const Menu = electron.Menu
 const globalShortcut = electron.globalShortcut;
 
 const windowStateKeeper = require('electron-window-state');
