@@ -1,12 +1,61 @@
 const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
-const Menu = electron.Menu
 const globalShortcut = electron.globalShortcut;
 
 const windowStateKeeper = require('electron-window-state');
 
 let mainWindow;
+
+// Main app menu
+const Menu = electron.Menu;
+const name = electron.app.getName();
+const webviewId = 'overcast_webview';
+const appWebsite = 'https://github.com/vitorgalvao/fog/';
+const template = [
+  {
+    label: 'Application',
+    submenu: [
+      { label: 'About ' + name, role: 'about' },
+      { type: 'separator' },
+      { label: 'Hide ' + name, accelerator: 'Command+H', role: 'hide' },
+      { label: 'Hide Others', accelerator: 'Command+Shift+H', role: 'hideothers' },
+      { type: 'separator' },
+      { label: 'Quit', accelerator: 'Command+Q', click: function() {app.quit();} }
+    ]
+  }, {
+    label: 'Edit',
+    submenu: [
+      { label: 'Undo', accelerator: 'Command+Z', role: 'undo' },
+      { label: 'Redo', accelerator: 'Shift+Command+Z', role: 'redo' },
+      { type: 'separator' },
+      { label: 'Cut', accelerator: 'Command+X', role: 'cut' },
+      { label: 'Copy', accelerator: 'Command+C', role: 'copy' },
+      { label: 'Paste', accelerator: 'Command+V', role: 'paste' },
+      { label: 'Select All', accelerator: 'Command+A', role: 'selectall' }
+    ]
+  }, {
+    label: 'View',
+    submenu: [
+      { label: 'Reload', accelerator: 'Command+R', click: function(item,focusedWindow) {if (focusedWindow) focusedWindow.webContents.executeJavaScript('document.getElementById(' + webviewId + ').reload()');} }
+    ]
+  }, {
+    label: 'Window',
+    role: 'window',
+    submenu: [
+      { label: 'Minimize', accelerator: 'Command+M', role: 'minimize' },
+      { label: 'Close', accelerator: 'Command+W', role: 'close' }
+    ]
+  }, {
+    label: 'Help',
+    role: 'help',
+    submenu: [
+      { label: 'View Website', click: function() { require('electron').shell.openExternal(appWebsite) } },
+      { type: 'separator' },
+      { label: 'Toggle Developer Tools', click: function(item,focusedWindow) {if (focusedWindow) focusedWindow.toggleDevTools();} }
+    ]
+  }
+];
 
 function focus_webview() {
   mainWindow.webContents.executeJavaScript('document.getElementById("overcast_webview").focus();');
@@ -43,53 +92,7 @@ app.on('ready', function() {
   globalShortcut.register('MediaNextTrack', function() { mainWindow.webContents.send('media_keys', 'seekforwardbutton'); });
   globalShortcut.register('MediaPlayPause', function() { mainWindow.webContents.send('media_keys', 'playpausebutton'); });
 
-  // Main app menu
-  const name = electron.app.getName();
-  const template = [
-    {
-      label: 'Application',
-      submenu: [
-        { label: 'About ' + name, role: 'about' },
-        { type: 'separator' },
-        { label: 'Hide ' + name, accelerator: 'Command+H', role: 'hide' },
-        { label: 'Hide Others', accelerator: 'Command+Shift+H', role: 'hideothers' },
-        { type: 'separator' },
-        { label: 'Quit', accelerator: 'Command+Q', click: function() {app.quit();} }
-      ]
-    }, {
-      label: 'Edit',
-      submenu: [
-        { label: 'Undo', accelerator: 'Command+Z', role: 'undo' },
-        { label: 'Redo', accelerator: 'Shift+Command+Z', role: 'redo' },
-        { type: 'separator' },
-        { label: 'Cut', accelerator: 'Command+X', role: 'cut' },
-        { label: 'Copy', accelerator: 'Command+C', role: 'copy' },
-        { label: 'Paste', accelerator: 'Command+V', role: 'paste' },
-        { label: 'Select All', accelerator: 'Command+A', role: 'selectall' }
-      ]
-    }, {
-      label: 'View',
-      submenu: [
-        { label: 'Reload', accelerator: 'Command+R', click: function(item,focusedWindow) {if (focusedWindow) focusedWindow.webContents.executeJavaScript('document.getElementById("overcast_webview").reload()');} }
-      ]
-    }, {
-      label: 'Window',
-      role: 'window',
-      submenu: [
-        { label: 'Minimize', accelerator: 'Command+M', role: 'minimize' },
-        { label: 'Close', accelerator: 'Command+W', role: 'close' }
-      ]
-    }, {
-      label: 'Help',
-      role: 'help',
-      submenu: [
-        { label: 'View Website', click: function() { require('electron').shell.openExternal('https://github.com/vitorgalvao/fog/') } },
-        { type: 'separator' },
-        { label: 'Toggle Developer Tools', click: function(item,focusedWindow) {if (focusedWindow) focusedWindow.toggleDevTools();} }
-      ]
-    }
-  ];
-
+  // Set menu
   Menu.setApplicationMenu(Menu.buildFromTemplate(template));
 
   // Focus on webview when focusing on window, so we can use keyboard shortcuts
