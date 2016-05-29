@@ -1,6 +1,6 @@
 # <img src='http://i.imgur.com/bV22rrd.png' width='45' align='left' alt='Fog logo'>Fog
 
-<img src='http://i.imgur.com/5pVpnMe.png' height='668' align='left' alt='Overcast screenshot'>
+<img src='http://i.imgur.com/5pVpnMe.png' height='668' align='left' alt='Fog screenshot'>
 
 ### Unofficial [Overcast](https://overcast.fm/) podcast app.
 
@@ -16,7 +16,7 @@
 
 > Automatically goes back to home when episode ends.
 
-<img src='http://i.imgur.com/6robqC6.png' width='48%' alt='Overcast screenshot'><img src='http://i.imgur.com/kQDjbcj.png' width='48%' alt='Overcast screenshot'>
+<img src='http://i.imgur.com/6robqC6.png' width='48%' alt='Fog screenshot'><img src='http://i.imgur.com/kQDjbcj.png' width='48%' alt='Fog screenshot'>
 
 ## Install
 
