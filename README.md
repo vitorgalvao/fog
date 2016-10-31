@@ -54,4 +54,4 @@ To support [Github](https://github.com/), authors of Electron, subscribe to a pl
 To support the author of this app, pick a method below.
 
 [<img src='https://upload.wikimedia.org/wikipedia/commons/5/53/PayPal_2014_logo.svg' height='18' alt='Support via Paypal'>](https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=hgdesigns%40gmail%2ecom&item_name=Tip%20for%20vitorgalvao&currency_code=EUR)&nbsp;&nbsp;
-[<img src='https://upload.wikimedia.org/wikipedia/commons/c/c5/Bitcoin_logo.svg' height='15' alt='Support via Bitcoin'>](https://dl.dropboxusercontent.com/s/n8k06vxyver48yf/bitcoin_tip_jar.html)
+[<img src='https://upload.wikimedia.org/wikipedia/commons/c/c5/Bitcoin_logo.svg' height='15' alt='Support via Bitcoin'>](http://vitorgalvao.com/bitcoin_tip_jar.html)
