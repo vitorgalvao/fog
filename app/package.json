@@ -8,10 +8,10 @@
   "scripts": {
     "get-electron-version": "grep 'electron-prebuilt' package.json | perl -pe 's/.*(\\d+\\.\\d+\\.\\d+).*/\\1/'",
     "start": "electron main.js",
-    "build": "npm run build-osx",
-    "build-osx": "electron_version=$(npm run get-electron-version | tail -1) && electron-packager . $npm_package_productName --overwrite --prune --platform=darwin --arch=x64 --version=${electron_version} --app-bundle-id=$npm_package_bundleId --app-version=$npm_package_version --icon=../icon/icon.icns",
-    "package": "npm run package-osx",
-    "package-osx": "npm run build-osx && ditto -ck --norsrc --keepParent 'Fog-darwin-x64/Fog.app' \"${HOME}/Desktop/Fog-osx-$npm_package_version.zip\" && rm -r 'Fog-darwin-x64'"
+    "build": "npm run build-macos",
+    "build-macos": "electron_version=$(npm run get-electron-version | tail -1) && electron-packager . $npm_package_productName --overwrite --prune --platform=darwin --arch=x64 --version=${electron_version} --app-bundle-id=$npm_package_bundleId --app-version=$npm_package_version --icon=../icon/icon.icns",
+    "package": "npm run package-macos",
+    "package-macos": "npm run build-macos && ditto -ck --norsrc --keepParent 'Fog-darwin-x64/Fog.app' \"${HOME}/Desktop/Fog-macos-$npm_package_version.zip\" && rm -r 'Fog-darwin-x64'"
   },
   "repository": {
     "type": "git",

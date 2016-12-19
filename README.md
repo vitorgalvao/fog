@@ -30,10 +30,10 @@ Built with [Electron](http://electron.atom.io).
 
 - Install dependencies: `npm install`
 - Run: `npm start`
-- Build for OS X: `npm run build-osx`
+- Build for macOS: `npm run build-macos`
 - Build for all platforms: `npm run build`
 
-Currently, only OS X is supported. I do not intend to officially support other platforms in the near future since I cannot consistently and reliably test on them, but am willing to add support if someone wants to collaborate in doing the legwork.
+Currently, only macOS is supported. I do not intend to officially support other platforms in the near future since I cannot consistently and reliably test on them, but am willing to add support if someone wants to collaborate in doing the legwork.
 
 #### License
 
