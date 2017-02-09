@@ -3,9 +3,14 @@
   <head>
     <title>Fog</title>
     <style>
+      html {
+        -webkit-app-region: drag;
+      }
+
       body {
         margin: 0;
         margin-top: 36px; /* title bar */
+        -webkit-app-region: no-drag;
       }
 
       #overcast_webview {
