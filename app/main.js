@@ -84,7 +84,7 @@ app.on('ready', function() {
   mainWindowState.manage(mainWindow);
 
   // Load the index.html of the app and focus on webview
-  mainWindow.loadURL('file://' + __dirname + '/index.html')
+  mainWindow.loadURL('file://' + __dirname + '/index.html');
   focus_webview();
 
   // Media keys shortcuts
