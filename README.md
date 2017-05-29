@@ -1,3 +1,12 @@
+To support my continued open-source work, pick a method:
+
+[<img src='https://upload.wikimedia.org/wikipedia/commons/5/53/PayPal_2014_logo.svg' height='18' alt='Support via Paypal'>](https://www.paypal.me/vitorgalvao)&nbsp;&nbsp;
+[<img src='https://upload.wikimedia.org/wikipedia/commons/c/c5/Bitcoin_logo.svg' height='15' alt='Support via Bitcoin'>](http://vitorgalvao.com/bitcoin_tip_jar.html)
+
+To support [Marco Arment](http://www.marco.org/), author of Overcast, download the Overcast iOS app and become a patron (“Support Overcast” option in the settings page).
+
+[<img src='https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg' height='22' alt='Download Overcast on the App Store'>](https://itunes.apple.com/us/app/overcast-podcast-player/id888422857?mt=8)
+
 # <img src='https://i.imgur.com/sIH9Q7O.png' width='45' align='center' alt='Fog logo'> Fog
 
 <img src='http://i.imgur.com/5pVpnMe.png' height='668' align='left' alt='Fog screenshot'>
@@ -40,20 +49,3 @@ Currently, only macOS is supported. I do not intend to officially support other 
 #### License
 
 The Unlicense (Public Domain, essentially)
-
----
-
-#### Support the authors
-
-To support [Marco Arment](http://www.marco.org/), author of Overcast, download the Overcast iOS app and become a patron (“Support Overcast” option in the settings page).
-
-[<img src='https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg' height='22' alt='Download Overcast on the App Store'>](https://itunes.apple.com/us/app/overcast-podcast-player/id888422857?mt=8)
-
-To support [Github](https://github.com/), authors of Electron, subscribe to a plan.
-
-[<img src='https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg' height='20' alt='Subscribe to Githb plan'>](https://github.com/pricing)
-
-To support the author of this app, pick a method below.
-
-[<img src='https://upload.wikimedia.org/wikipedia/commons/5/53/PayPal_2014_logo.svg' height='18' alt='Support via Paypal'>](https://www.paypal.me/vitorgalvao)&nbsp;&nbsp;
-[<img src='https://upload.wikimedia.org/wikipedia/commons/c/c5/Bitcoin_logo.svg' height='15' alt='Support via Bitcoin'>](http://vitorgalvao.com/bitcoin_tip_jar.html)
