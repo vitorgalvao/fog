@@ -70,6 +70,7 @@ app.on('ready', function() {
 
   // Create the browser window.
   mainWindow = new BrowserWindow({
+    backgroundColor: '#ffffff',
     x: mainWindowState.x,
     y: mainWindowState.y,
     width: mainWindowState.width,
