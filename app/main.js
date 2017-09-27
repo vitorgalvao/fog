@@ -78,8 +78,13 @@ app.on('ready', function() {
     minWidth: 298,
     minHeight: 502,
     titleBarStyle: 'hidden-inset',
-    title: 'Fog'
+    title: 'Fog',
+    show: false
   });
+  
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show()
+  })
 
   // Add listeners to check for window maximization and save state
   mainWindowState.manage(mainWindow);
