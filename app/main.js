@@ -70,6 +70,7 @@ app.on('ready', function() {
 
   // Create the browser window.
   mainWindow = new BrowserWindow({
+    backgroundColor: '#fff',
     x: mainWindowState.x,
     y: mainWindowState.y,
     width: mainWindowState.width,
@@ -77,8 +78,14 @@ app.on('ready', function() {
     minWidth: 298,
     minHeight: 502,
     titleBarStyle: 'hidden-inset',
-    title: 'Fog'
+    title: 'Fog',
+    show: false // Avoid initial flash of no content by not showing window on start…
   });
+  
+  // … and only showing the window after the renderer process has rendered the page 
+  mainWindow.once('ready-to-show', function() {
+    mainWindow.show()
+  })
 
   // Add listeners to check for window maximization and save state
   mainWindowState.manage(mainWindow);
