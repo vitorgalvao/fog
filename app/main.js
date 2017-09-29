@@ -79,10 +79,11 @@ app.on('ready', function() {
     minHeight: 502,
     titleBarStyle: 'hidden-inset',
     title: 'Fog',
-    show: false
+    show: false // Avoid initial flash of no content by not showing window on start…
   });
   
-  mainWindow.once('ready-to-show', () => {
+  // … and only showing the window after the renderer process has rendered the page 
+  mainWindow.once('ready-to-show', function() {
     mainWindow.show()
   })
 
