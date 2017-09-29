@@ -77,7 +77,8 @@ app.on('ready', function() {
     minWidth: 298,
     minHeight: 502,
     titleBarStyle: 'hidden-inset',
-    title: 'Fog'
+    title: 'Fog',
+    backgroundColor: '#fff',
   });
 
   // Add listeners to check for window maximization and save state
