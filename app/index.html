@@ -39,6 +39,9 @@
       });
 
       webview.addEventListener('dom-ready', function() {
+        // Warn main process the page has loaded
+        ipcRenderer.send('page-loaded');
+
         // Inject sweetalert CSS into webview
         const fs = require('fs');
         const sweetalert_css = fs.readFileSync(__dirname + '/sweetalert.css', 'utf8');

@@ -1,4 +1,5 @@
 const electron = require('electron');
+const ipcMain = electron.ipcMain;
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const globalShortcut = electron.globalShortcut;
@@ -79,6 +80,12 @@ app.on('ready', function() {
     titleBarStyle: 'hidden-inset',
     title: 'Fog',
     backgroundColor: '#fff',
+    show: false // Avoid initial flash of no content by not showing window on start…
+  });
+
+  // … and only showing the window after the DOM is ready on the webview
+  ipcMain.on('page-loaded', function() {
+    mainWindow.show();
   });
 
   // Add listeners to check for window maximization and save state
