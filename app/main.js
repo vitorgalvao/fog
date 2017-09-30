@@ -63,10 +63,12 @@ function focus_webview() {
 }
 
 app.on('ready', function() {
+  const min_window_size = [352, 556]
+
   // Initial window state
   const mainWindowState = windowStateKeeper({
-    defaultWidth: 352,
-    defaultHeight: 556
+    defaultWidth: min_window_size[0],
+    defaultHeight: min_window_size[1]
   });
 
   // Create the browser window.
@@ -75,8 +77,8 @@ app.on('ready', function() {
     y: mainWindowState.y,
     width: mainWindowState.width,
     height: mainWindowState.height,
-    minWidth: 298,
-    minHeight: 502,
+    minWidth: min_window_size[0],
+    minHeight: min_window_size[1],
     titleBarStyle: 'hidden-inset',
     title: 'Fog',
     backgroundColor: '#fff',
