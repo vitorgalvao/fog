@@ -17,7 +17,7 @@ To support [Marco Arment](http://www.marco.org/), author of Overcast, download t
 
 > Navigate episodes with <kbd>↓</kbd> and <kbd>↑</kbd> (or <kbd>j</kbd> and <kbd>k</kbd>).
 
-> Keyboard shortcuts: <kbd>␣</kbd> stops and resumes; <kbd>⌫</kbd> goes back to home; <kbd>⌘</kbd><kbd>⌫</kbd> deletes the current episode or podcast; <kbd>⌘</kbd><kbd>↩</kbd> saves the current episode.
+> Keyboard shortcuts: <kbd>␣</kbd> stops and resumes; <kbd>⌫</kbd> goes back to home; <kbd>⌘</kbd><kbd>⌫</kbd> deletes the current episode or podcast; <kbd>⌘</kbd><kbd>↵</kbd> saves the current episode.
 
 > “Permalink” opens in default browser.
 
