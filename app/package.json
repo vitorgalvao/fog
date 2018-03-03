@@ -1,17 +1,22 @@
 {
   "name": "fog",
-  "productName": "Fog",
-  "bundleId": "com.vitorgalvao.fog",
   "version": "1.3.1",
   "description": "Unofficial overcast.fm podcast app",
+  "build": {
+    "appId": "com.vitorgalvao.fog",
+    "productName": "Fog",
+    "mac": {
+      "target": "zip",
+      "icon": "../icon/icon.icns"
+    }
+  },
   "main": "main.js",
   "scripts": {
-    "get-electron-version": "grep 'electron-prebuilt' package.json | perl -pe 's/.*(\\d+\\.\\d+\\.\\d+).*/\\1/'",
     "start": "electron main.js",
     "build": "npm run build-macos",
-    "build-macos": "electron-packager . \"$npm_package_productName\" --overwrite --prune --platform=darwin --arch=x64 --app-bundle-id=\"$npm_package_bundleId\" --app-version=\"$npm_package_version\" --icon=../icon/icon.icns",
+    "build-macos": "electron-builder --dir",
     "package": "npm run package-macos",
-    "package-macos": "npm run build-macos && ditto -ck --norsrc --keepParent 'Fog-darwin-x64/Fog.app' \"${HOME}/Desktop/Fog-macos-$npm_package_version.zip\" && rm -r 'Fog-darwin-x64'"
+    "package-macos": "electron-builder"
   },
   "repository": {
     "type": "git",
@@ -30,8 +35,8 @@
   },
   "homepage": "https://github.com/vitorgalvao/fog",
   "devDependencies": {
-    "electron-packager": "^9.1.0",
-    "electron": "^1.7.8"
+    "electron": "^1.8.2",
+    "electron-builder": "^20.2.0"
   },
   "dependencies": {
     "electron-window-state": "^4.1.1",
