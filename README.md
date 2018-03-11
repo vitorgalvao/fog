@@ -24,7 +24,9 @@ To support [Marco Arment](http://www.marco.org/), author of Overcast, download t
 
 > “Share link” and “Share link with timestamp” copy link directly to the clipboard.
 
-> Automatically goes back to home when episode ends.
+> Automatically go back to home when episode ends.
+
+> Go to specific episode by giving its URL on the command line.
 
 <img src='http://i.imgur.com/6robqC6.png' width='48%' alt='Fog screenshot'><img src='https://i.imgur.com/qjs5b7J.png' width='48%' alt='Fog screenshot'>
 

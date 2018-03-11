@@ -62,6 +62,14 @@ function focus_webview() {
   mainWindow.webContents.executeJavaScript('document.getElementById("overcast_webview").focus();');
 }
 
+function get_hostname(url) {
+  if (url.indexOf('://') > -1) {
+    return url.split('/')[2];
+  } else {
+    return url.split('/')[0];
+  }
+}
+
 app.on('ready', function() {
   const min_window_size = [352, 556]
 
@@ -96,6 +104,13 @@ app.on('ready', function() {
   // Load the index.html of the app and focus on webview
   mainWindow.loadURL('file://' + __dirname + '/index.html');
   focus_webview();
+
+  // If given an overcast.fm URL as the argument, try to load it
+  const overcast_url = process.argv[1];
+  if (overcast_url) {
+    if (get_hostname(overcast_url) != 'overcast.fm') throw new Error('Argument needs to be an overcast.fm URL')
+    mainWindow.webContents.executeJavaScript('document.getElementById("overcast_webview").src = "' + overcast_url + '"');
+  }
 
   // Media keys shortcuts
   globalShortcut.register('MediaPreviousTrack', function() { mainWindow.webContents.send('media_keys', 'seekbackbutton') });
