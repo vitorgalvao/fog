@@ -1,4 +1,4 @@
-const { app, BrowserWindow, globalShortcut, ipcMain, Menu } = require('electron')
+const { app, BrowserWindow, globalShortcut, ipcMain, Menu } = require('electron');
 const windowStateKeeper = require('electron-window-state');
 let mainWindow;
 
