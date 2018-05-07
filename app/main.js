@@ -15,7 +15,7 @@ const template = [
       { label: 'Hide ' + name, accelerator: 'Command+H', role: 'hide' },
       { label: 'Hide Others', accelerator: 'Command+Shift+H', role: 'hideothers' },
       { type: 'separator' },
-      { label: 'Quit', accelerator: 'Command+Q', click: function() {app.quit();} }
+      { label: 'Quit', accelerator: 'Command+Q', click: function () { app.quit(); } }
     ]
   }, {
     label: 'Edit',
@@ -31,7 +31,7 @@ const template = [
   }, {
     label: 'View',
     submenu: [
-      { label: 'Reload', accelerator: 'Command+R', click: function(item,focusedWindow) {if (focusedWindow) focusedWindow.webContents.executeJavaScript('document.getElementById(' + webviewId + ').reload()');} }
+      { label: 'Reload', accelerator: 'Command+R', click: function (item, focusedWindow) { if (focusedWindow) focusedWindow.webContents.executeJavaScript('document.getElementById(' + webviewId + ').reload()'); } }
     ]
   }, {
     label: 'Window',
@@ -44,9 +44,9 @@ const template = [
     label: 'Help',
     role: 'help',
     submenu: [
-      { label: 'View Website', click: function() { require('electron').shell.openExternal(appWebsite) } },
+      { label: 'View Website', click: function () { require('electron').shell.openExternal(appWebsite) } },
       { type: 'separator' },
-      { label: 'Toggle Developer Tools', click: function(item,focusedWindow) {if (focusedWindow) focusedWindow.toggleDevTools();} }
+      { label: 'Toggle Developer Tools', click: function (item, focusedWindow) { if (focusedWindow) focusedWindow.toggleDevTools(); } }
     ]
   }
 ];
@@ -63,7 +63,7 @@ function get_hostname(url) {
   }
 }
 
-app.on('ready', function() {
+app.on('ready', function () {
   const min_window_size = [352, 556]
 
   // Initial window state
@@ -87,7 +87,7 @@ app.on('ready', function() {
   });
 
   // … and only showing the window after the DOM is ready on the webview
-  ipcMain.on('page-loaded', function() {
+  ipcMain.on('page-loaded', function () {
     mainWindow.show();
   });
 
@@ -106,35 +106,35 @@ app.on('ready', function() {
   }
 
   // Media keys shortcuts
-  globalShortcut.register('MediaPreviousTrack', function() { mainWindow.webContents.send('media_keys', 'seekbackbutton') });
-  globalShortcut.register('MediaNextTrack', function() { mainWindow.webContents.send('media_keys', 'seekforwardbutton'); });
-  globalShortcut.register('MediaPlayPause', function() { mainWindow.webContents.send('media_keys', 'playpausebutton'); });
+  globalShortcut.register('MediaPreviousTrack', function () { mainWindow.webContents.send('media_keys', 'seekbackbutton') });
+  globalShortcut.register('MediaNextTrack', function () { mainWindow.webContents.send('media_keys', 'seekforwardbutton'); });
+  globalShortcut.register('MediaPlayPause', function () { mainWindow.webContents.send('media_keys', 'playpausebutton'); });
 
   // Set menu
   Menu.setApplicationMenu(Menu.buildFromTemplate(template));
 
   // Focus on webview when focusing on window, so we can use keyboard shortcuts
-  app.on('browser-window-focus', function() {
+  app.on('browser-window-focus', function () {
     focus_webview();
   });
 
   // Prevent app from exiting (hide it instead) when window is closed (i.e. when we press the red close button)
-  mainWindow.on('close', function(event) {
+  mainWindow.on('close', function (event) {
     event.preventDefault();
     mainWindow.hide();
     app.focus();
   });
 
-  app.on('before-quit', function() {
+  app.on('before-quit', function () {
     globalShortcut.unregisterAll();
     mainWindow.webContents.send('sync_podcast'); // Try to force a sync before closing
 
-    setTimeout(function() { // Give enough time for the sync attempt to go through
+    setTimeout(function () { // Give enough time for the sync attempt to go through
       app.exit(0);
     }, 1500);
   });
 
-  app.on('activate', function() {
+  app.on('activate', function () {
     mainWindow.show();
   });
 });
