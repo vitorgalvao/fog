@@ -67,14 +67,6 @@ Mousetrap.bind('command+return', function() {
   if (page_type() === 'episode') document.getElementById('save_episode_button').click();
 });
 
-Mousetrap.bind('space', function(event) {
-  event.preventDefault();
-
-  if (page_type() === 'episode') {
-    document.getElementById('playpausebutton').click();
-  }
-});
-
 // Navigate episode cells
 Mousetrap.bind(['down', 'j'], function() {
   navigate_cells('down');
