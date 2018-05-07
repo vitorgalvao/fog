@@ -1,16 +1,9 @@
-const electron = require('electron');
-const ipcMain = electron.ipcMain;
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
-const globalShortcut = electron.globalShortcut;
-
+const { app, BrowserWindow, globalShortcut, ipcMain, Menu } = require('electron')
 const windowStateKeeper = require('electron-window-state');
-
 let mainWindow;
 
 // Main app menu
-const Menu = electron.Menu;
-const name = electron.app.getName();
+const name = app.getName();
 const webviewId = 'overcast_webview';
 const appWebsite = 'https://github.com/vitorgalvao/fog/';
 const template = [
