@@ -46,7 +46,7 @@ const template = [
     submenu: [
       { label: 'View Website', click: function () { require('electron').shell.openExternal(appWebsite) } },
       { type: 'separator' },
-      { label: 'Toggle Developer Tools', click: function (item, focusedWindow) { if (focusedWindow) focusedWindow.toggleDevTools(); } }
+      { label: 'Open Developer Tools', click: function (item, focusedWindow) { if (focusedWindow) focusedWindow.webContents.executeJavaScript('document.getElementById("' + webviewId + '").openDevTools();'); } }
     ]
   }
 ];
