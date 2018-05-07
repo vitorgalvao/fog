@@ -52,7 +52,7 @@ const template = [
 ];
 
 function focus_webview() {
-  mainWindow.webContents.executeJavaScript('document.getElementById("overcast_webview").focus();');
+  mainWindow.webContents.executeJavaScript('document.getElementById("' + webviewId + '").focus();');
 }
 
 function get_hostname(url) {
