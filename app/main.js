@@ -51,10 +51,6 @@ const template = [
   }
 ];
 
-function focus_webview() {
-  mainWindow.webContents.executeJavaScript('document.getElementById("' + webviewId + '").focus();');
-}
-
 function get_hostname(url) {
   if (url.indexOf('://') > -1) {
     return url.split('/')[2];
@@ -94,9 +90,8 @@ app.on('ready', function () {
   // Add listeners to check for window maximization and save state
   mainWindowState.manage(mainWindow);
 
-  // Load the index.html of the app and focus on webview
+  // Load the index.html of the app
   mainWindow.loadURL('file://' + __dirname + '/index.html');
-  focus_webview();
 
   // If given an overcast.fm URL as the argument, try to load it
   const overcast_url = process.argv[1];
@@ -115,7 +110,7 @@ app.on('ready', function () {
 
   // Focus on webview when focusing on window, so we can use keyboard shortcuts
   app.on('browser-window-focus', function () {
-    focus_webview();
+    mainWindow.webContents.executeJavaScript('document.getElementById("' + webviewId + '").focus();');
   });
 
   // Prevent app from exiting (hide it instead) when window is closed (i.e. when we press the red close button)
