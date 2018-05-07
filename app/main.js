@@ -31,7 +31,7 @@ const template = [
   }, {
     label: 'View',
     submenu: [
-      { label: 'Reload', accelerator: 'Command+R', click: function (item, focusedWindow) { if (focusedWindow) focusedWindow.webContents.executeJavaScript('document.getElementById(' + webviewId + ').reload()'); } }
+      { label: 'Reload', accelerator: 'Command+R', click: function (item, focusedWindow) { if (focusedWindow) focusedWindow.webContents.executeJavaScript('document.getElementById("' + webviewId + '").reload();'); } }
     ]
   }, {
     label: 'Window',
