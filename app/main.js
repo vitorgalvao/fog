@@ -94,6 +94,8 @@ app.on('ready', function () {
   mainWindow.loadURL('file://' + __dirname + '/index.html');
 
   // If given an overcast.fm URL as the argument, try to load it
+  if (process.defaultApp) process.argv.shift(); // Normalise argument positions when running with electron and built app
+
   const overcast_url = process.argv[1];
   if (overcast_url) {
     if (get_hostname(overcast_url) != 'overcast.fm') throw new Error('Argument needs to be an overcast.fm URL')
