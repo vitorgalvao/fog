@@ -4,7 +4,7 @@ To support my continued open-source work, pick a method:
 [<img src='https://upload.wikimedia.org/wikipedia/commons/c/c5/Bitcoin_logo.svg' height='15' alt='Support via Bitcoin'>](http://vitorgalvao.com/bitcoin_tip_jar.html)&nbsp;&nbsp;
 [<img src='https://dl.dropboxusercontent.com/s/y3pft1fbmer5v22/society6.svg' height='19' alt='Support via Society6'>](https://vitorgalvao.com/society6)
 
-To support [Marco Arment](http://www.marco.org/), author of Overcast, download the Overcast iOS app and become a patron (“Support Overcast” option in the settings page).
+To support [Marco Arment](http://www.marco.org/), author of Overcast, subscribe to Overcast Premium (view the settings page of the iOS app).
 
 [<img src='https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg' height='22' alt='Download Overcast on the App Store'>](https://itunes.apple.com/us/app/overcast-podcast-player/id888422857?mt=8)
 
