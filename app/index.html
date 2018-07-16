@@ -41,11 +41,11 @@
       webview.addEventListener('dom-ready', function() {
         // Warn main process the page has loaded
         ipcRenderer.send('page-loaded');
-
-        // Inject sweetalert CSS into webview
+        
+        // Inject CSS overrides and Sweet Alert
         const fs = require('fs');
-        const sweetalert_css = fs.readFileSync(__dirname + '/sweetalert.css', 'utf8');
-        this.insertCSS(sweetalert_css);
+        const fogAppUI = fs.readFileSync(__dirname + '/css/fog-app-ui.css', 'utf8');
+        this.insertCSS(fogAppUI);
       });
 
       // Try to force a sync before closing
