@@ -42,10 +42,10 @@
         // Warn main process the page has loaded
         ipcRenderer.send('page-loaded');
         
-        // Inject CSS overrides and Sweet Alert
+        // Inject CSS overrides
         const fs = require('fs');
-        const fogAppUI = fs.readFileSync(__dirname + '/css/fog-app-ui.css', 'utf8');
-        this.insertCSS(fogAppUI);
+        const fog_overrides = fs.readFileSync(__dirname + '/css/fog_overrides.css', 'utf8');
+        this.insertCSS(fog_overrides);
       });
 
       // Try to force a sync before closing
