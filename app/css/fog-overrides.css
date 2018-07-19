@@ -1,0 +1,45 @@
+:root {
+  --overcast-orange: #fc7e0f;
+  --delete-red: #fc1b0f;
+}
+
+/* Animate and scale logo and playback buttons */
+svg,
+#tinyhomeimg {
+  transition: all 100ms ease-out;
+}
+
+svg:hover,
+#tinyhomeimg:hover {
+  transform: scale(1.05);
+}
+
+/* Change link color on hover */
+a[href='/account']:hover,
+.centertext a:hover,
+.footer > a:hover {
+  filter: brightness(1.3);
+}
+
+/* Delete button hover */
+.destructivebutton:hover {
+  background: var(--delete-red);
+  color: white;
+}
+
+/* Save/Subscribe button hover */
+form[action^='/podcasts/add/'] > .ocborderedbutton:hover,
+#save_episode_button:hover {
+  background: var(--overcast-orange);
+  color: white;
+}
+
+/* Selection on podcast search */
+.autocomplete_result:hover h4 {
+  color: var(--overcast-orange);
+}
+
+/* Pixel adjustment to playback speed controls */
+#speedcontrolbackground {
+  padding-top: 2px;
+}
