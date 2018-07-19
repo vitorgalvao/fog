@@ -42,7 +42,7 @@
         // Warn main process the page has loaded
         ipcRenderer.send('page-loaded');
         
-        // Inject CSS overrides
+        // Inject CSS overrides into webview
         const fs = require('fs');
         const fog_overrides = fs.readFileSync(__dirname + '/css/fog_overrides.css', 'utf8');
         this.insertCSS(fog_overrides);
