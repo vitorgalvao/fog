@@ -44,7 +44,7 @@
         
         // Inject CSS overrides into webview
         const fs = require('fs');
-        const fog_overrides = fs.readFileSync(__dirname + '/css/fog_overrides.css', 'utf8');
+        const fog_overrides = fs.readFileSync(__dirname + '/css/fog-overrides.css', 'utf8');
         this.insertCSS(fog_overrides);
       });
 
