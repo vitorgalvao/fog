@@ -28,6 +28,8 @@ To support [Marco Arment](http://www.marco.org/), author of Overcast, subscribe 
 
 > Go to specific episode by giving its URL on the command line.
 
+> Tweaked user experience when copying and hovering over links.
+
 <img src='http://i.imgur.com/6robqC6.png' width='48%' alt='Fog screenshot'><img src='https://i.imgur.com/qjs5b7J.png' width='48%' alt='Fog screenshot'>
 
 ## Install

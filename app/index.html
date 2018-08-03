@@ -42,10 +42,12 @@
         // Warn main process the page has loaded
         ipcRenderer.send('page-loaded');
 
-        // Inject sweetalert CSS into webview
+        // Inject CSS overrides into webview
         const fs = require('fs');
-        const sweetalert_css = fs.readFileSync(__dirname + '/sweetalert.css', 'utf8');
+        const sweetalert_css = fs.readFileSync(__dirname + '/css/sweetalert.css', 'utf8');
+        const fog_overrides_css = fs.readFileSync(__dirname + '/css/fog-overrides.css', 'utf8');
         this.insertCSS(sweetalert_css);
+        this.insertCSS(fog_overrides_css);
       });
 
       // Try to force a sync before closing
