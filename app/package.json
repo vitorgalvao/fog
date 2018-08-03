@@ -1,6 +1,6 @@
 {
   "name": "fog",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Unofficial overcast.fm podcast app",
   "build": {
     "appId": "com.vitorgalvao.fog",
