@@ -31,6 +31,7 @@ a[href='/account']:hover,
 form[action^='/podcasts/add/'] > .ocborderedbutton:hover,
 #save_episode_button:hover {
   background: var(--overcast-orange);
+  filter: brightness(1); /* Override brightness increase from other links */
   color: white;
 }
 
