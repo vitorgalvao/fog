@@ -76,7 +76,7 @@ app.on('ready', function () {
     height: mainWindowState.height,
     minWidth: min_window_size[0],
     minHeight: min_window_size[1],
-    titleBarStyle: 'hidden-inset',
+    titleBarStyle: 'hiddenInset',
     title: 'Fog',
     backgroundColor: '#fff',
     show: false // Avoid initial flash of no content by not showing window on start…

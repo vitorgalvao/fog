@@ -1,6 +1,6 @@
 {
   "name": "fog",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "Unofficial overcast.fm podcast app",
   "build": {
     "appId": "com.vitorgalvao.fog",
@@ -35,12 +35,12 @@
   },
   "homepage": "https://github.com/vitorgalvao/fog",
   "devDependencies": {
-    "electron": "^1.8.2",
-    "electron-builder": "^20.2.0"
+    "electron": "^4.1.1",
+    "electron-builder": "^20.39.0"
   },
   "dependencies": {
-    "electron-window-state": "^4.1.1",
-    "mousetrap": "^1.6.1",
+    "electron-window-state": "^5.0.3",
+    "mousetrap": "^1.6.3",
     "sweetalert": "^1.1.3"
   }
 }
