@@ -1,12 +1,3 @@
-To support my continued open-source work, pick a method:
-
-[<img src='https://upload.wikimedia.org/wikipedia/commons/5/53/PayPal_2014_logo.svg' height='18' alt='Support via Paypal'>](https://www.paypal.me/vitorgalvao)&nbsp;&nbsp;
-[<img src='https://dl.dropboxusercontent.com/s/y3pft1fbmer5v22/society6.svg' height='19' alt='Support via Society6'>](https://vitorgalvao.com/society6)
-
-To support [Marco Arment](http://www.marco.org/), author of Overcast, subscribe to Overcast Premium (view the settings page of the iOS app).
-
-[<img src='https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg' height='22' alt='Download Overcast on the App Store'>](https://itunes.apple.com/us/app/overcast-podcast-player/id888422857?mt=8)
-
 # <img src='https://i.imgur.com/sIH9Q7O.png' width='45' align='center' alt='Fog logo'> Fog
 
 <img src='http://i.imgur.com/5pVpnMe.png' height='668' align='left' alt='Fog screenshot'>
