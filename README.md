@@ -24,7 +24,7 @@
 
 ## Install
 
-[Download the latest version](https://github.com/vitorgalvao/fog/releases), or run `brew cask install fog` if you use [homebrew](http://brew.sh/).
+[Download the latest version](https://github.com/vitorgalvao/fog/releases), or run `brew install --cask fog` if you use [homebrew](http://brew.sh/).
 
 ## Development
 
