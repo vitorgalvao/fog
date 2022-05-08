@@ -1,3 +1,9 @@
+### Project Status
+
+The app is considered complete. It fulfils its goal and has (to my knowledge) been stable and bug-free for several years. On Apple Silicon Macs, it is deprecated in favour of the iOS Overcast app. On Intel Macs it should continue to work for the foreseeable future. The repository is archived to denote that breaks due to external forces (such as Electron bugs or Overcast site changes) won’t be proactively addressed.
+
+---
+
 # <img src='https://i.imgur.com/sIH9Q7O.png' width='45' align='center' alt='Fog logo'> Fog
 
 <img src='http://i.imgur.com/5pVpnMe.png' height='668' align='left' alt='Fog screenshot'>
@@ -24,7 +30,7 @@
 
 ## Install
 
-[Download the latest version](https://github.com/vitorgalvao/fog/releases), or run `brew install --cask fog` if you use [homebrew](http://brew.sh/).
+[Download the latest version](https://github.com/vitorgalvao/fog/releases).
 
 ## Development
 
